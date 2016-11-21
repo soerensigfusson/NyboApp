@@ -1,0 +1,55 @@
+.animate-show-up.ng-hide-remove {
+    animation: fadeInUp 200ms both;
+};
+.animate-hide-down.ng-hide-add {
+    animation: fadeOutDown 200ms both;
+};
+
+.animate-show-height {
+    &.ng-hide-remove {
+        animation: heightIn 200ms both;
+    }
+    &.ng-hide-add {
+        animation: heightOut 200ms both;
+    }
+}
+.animate-enter-height {
+    &.ng-enter {
+        animation: heightIn 200ms both;
+    }
+    &.ng-leave {
+        animation: heightOut 200ms both;
+    }
+}
+
+.shake {
+    animation: shake 400ms;
+}
+.enter-up {
+    &.ng-enter {
+        animation: fadeInUp 400ms both;
+    }
+}
+.enter-down {
+    &.ng-enter {
+        animation: fadeInDown 400ms both;
+    }
+}
+
+.slide-in {
+    &.ng-enter {
+        animation: fadeInLeft 400ms both;
+    }
+}
+&.slide-out {
+    &.ng-leave {
+        animation: bounceOutLeft 800ms both;
+    }
+}
+
+.stagger {
+    &.ng-enter-stagger {
+        animation-duration: 0;
+        animation-delay: 200ms;
+    }
+}

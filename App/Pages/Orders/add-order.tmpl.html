@@ -1,0 +1,75 @@
+<md-toolbar class="md-hue-3">
+    <div class="md-toolbar-tools" layout="row">
+        <h2>Ny ordrer</h2>
+        <span flex></span>
+        <md-button ui-sref="^.list">
+            <md-icon md-font-icon="material-icons">close</md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<md-content layout-padding>
+
+    <form name="neworder" layout-padded layout="column">
+
+        <md-input-container>
+            <label>Navn på ordrer</label>
+            <input ng-model="order.name">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Beskrivelse</label>
+            <textarea ng-model="order.description"></textarea>
+        </md-input-container>
+
+        <md-autocomplete
+            flex
+            required
+            md-input-name="address"
+            md-input-minlength="2"
+            md-selected-item="addrSearch.selectedItem"
+            md-selected-item-change="selectAddress()"
+            md-search-text="addrSearch.searchText"
+            md-delay="100"
+            md-items="item in querySearch(addrSearch.searchText)"
+            md-item-text="item.tekst"
+            md-select-on-match="true"
+            md-match-case-insensitive="true"
+            md-require-match
+            md-floating-label="Adresse">
+            <md-item-template>
+                <span md-highlight-text="addrSearch.searchText">{{item.tekst}}</span>
+            </md-item-template>
+        </md-autocomplete>
+
+        <md-input-container>
+            <md-datepicker ng-model="order.startdate" md-hide-icons="calendar" md-placeholder="Start dato"></md-datepicker>
+        </md-input-container>
+
+        <md-input-container>
+            <md-datepicker ng-model="order.enddate" md-hide-icons="calendar" md-placeholder="Deadline"></md-datepicker>
+        </md-input-container>
+
+        <md-input-container>
+            <label>Contact person</label>
+            <input ng-model="order.contactname">
+        </md-input-container>
+
+        <md-input-container>
+            <label>Contact phone</label>
+            <input type="tel" ng-model="order.contactphone">
+        </md-input-container>
+
+
+        <md-input-container ng-if="order.$id">
+            <label>Tilføj billede</label>
+            <input type="file" accept="image/*" uploader="onFileUploaded">
+        </md-input-container>
+
+
+    </form>
+    <div class="">
+        <md-button class="md-primary" ng-click="saveOrder()" ng-if="order">Save</md-button>
+    </div>
+
+</md-content>

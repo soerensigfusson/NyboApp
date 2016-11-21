@@ -1,0 +1,32 @@
+<md-list flex>
+    <md-subheader >Users</md-subheader>
+
+    <md-list-item ng-repeat="user in users">
+       <p>{{ user.name }}</p>
+       <md-menu class="md-secondary">
+         <md-button class="md-icon-button">
+           <md-icon md-font-icon="material-icons">more_vert</md-icon>
+         </md-button>
+         <md-menu-content width="4">
+           <md-menu-item>
+             <md-button>
+               Check voicemail
+             </md-button>
+           </md-menu-item>
+           <md-menu-divider></md-menu-divider>
+           <md-menu-item>
+             <md-button ng-click="delete(user)" ng-disabled="user.uid === currentUser">
+                 <md-icon md-font-icon="material-icons" md-menu-align-target>delete_forever</md-icon>
+                 Slet
+             </md-button>
+           </md-menu-item>
+         </md-menu-content>
+       </md-menu>
+
+    </md-list-item>
+</md-list>
+
+
+
+
+<md-button class="md-primary" ng-click="addUser()">Add new user</md-button>

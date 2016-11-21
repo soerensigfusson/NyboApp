@@ -1,0 +1,31 @@
+<md-content layout-padding>
+
+    <dl class="">
+        <dt>Adresse</dt>
+        <dd>{{order.address}}</dd>
+
+        <dt>Beskrivelse</dt>
+        <dd>{{order.description}}</dd>
+
+        <dt>Deadline</dt>
+        <dd>{{order.enddate}}</dd>
+
+        <dt>Start dato</dt>
+        <dd>{{order.startdate}}</dd>
+
+        <dt>Kontaktperson</dt>
+        <dd>{{order.contactname}}</dd>
+
+        <dt>Kontakt telefonnummer</dt>
+        <dd>{{order.contactphone}}</dd>
+
+    </dl>
+
+    <md-divider></md-divider>
+
+    <div class="">
+        <md-button class="md-primary" ui-sref="home.orders.edit({id: order.$id})">Edit order details</md-button>
+        <md-button class="md-secondary" ng-click="deleteOrder()">Delete order</md-button>
+    </div>
+
+</md-content>

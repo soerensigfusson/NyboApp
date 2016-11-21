@@ -1,0 +1,62 @@
+dev-clean:
+    - 'clean:development'
+
+dev:
+    - 'clean:tempfolder'
+    - 'devBuild'
+    - 'ngconstant:development'
+    - 'watch'
+
+devBuild:
+    - 'copy:resources'
+    - 'copy:js'
+    - 'copy:html'
+
+    - 'sass:development'
+    - 'postcss:development'
+
+    - 'html2js:templates'
+    - 'html2js:iconTemplates'
+
+    # Annotate application files and put them in a temp folder
+    - 'ngAnnotate:dev'
+
+    - 'babel'
+
+    - 'concat:core'
+    # Concat the files in the temp folder
+    - 'concat:application'
+
+    - 'uglify:templates'
+    - 'uglify:iconTemplates'
+    - 'uglify:core'
+    - 'uglify:application'
+
+
+build:
+    - 'copy:resources'
+    - 'copy:js'
+    - 'copy:html'
+
+    - 'sass:production'
+    - 'postcss:production'
+
+    - 'html2js:templates'
+    - 'html2js:iconTemplates'
+
+    - 'ngAnnotate:dev'
+
+    - 'babel'
+
+    - 'concat:core'
+
+    - 'concat:application'
+
+    - 'uglify:core'
+    - 'uglify:application'
+    - 'uglify:templates'
+    - 'uglify:iconTemplates'
+
+
+default:
+    - 'build'

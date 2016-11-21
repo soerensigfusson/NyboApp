@@ -1,0 +1,22 @@
+<md-toolbar class="md-hue-3">
+    <div class="md-toolbar-tools">
+        <h2>
+            <span ui-sref="^.list" md-ink>Ordrerliste</span>
+            <md-icon md-font-icon="material-icons">chevron_right</md-icon>
+            <span>{{order.name}}</span>
+        </h2>
+
+    </div>
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-sref=".details" name="details">Details</md-nav-item>
+        <md-nav-item md-nav-sref=".materials" name="materials">Materials</md-nav-item>
+        <md-nav-item md-nav-sref=".time" name="time">Time</md-nav-item>
+    </md-nav-bar>
+
+</md-toolbar>
+
+<md-content>
+    <div class="ext-content" ui-view>
+
+    </div>
+</md-content>

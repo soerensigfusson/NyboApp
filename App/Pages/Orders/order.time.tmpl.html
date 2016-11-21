@@ -1,0 +1,61 @@
+<md-content layout-padding>
+
+    <md-list>
+        <md-list-item layout="row" layout-padding ng-repeat="timereg in order.timeregistrations">
+            <div>
+                {{timereg.date | todate | date : 'dd/mm/yyyy'}}
+            </div>
+            <div>
+                {{timereg.time | minutes}}
+            </div>
+            <div flex>
+                {{timereg.description}}
+            </div>
+            <div>
+                {{getUsername(timereg.user)}}
+            </div>
+
+            <div>
+                <md-button ng-click="deleteTimereg($index)">
+                    <md-icon md-font-icon="material-icons">remove</md-icon>
+                </md-button>
+            </div>
+        </md-list-item>
+
+    </md-list>
+
+    <md-card>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Tilføj tidsregistrering</span>
+          </md-card-title-text>
+        </md-card-title>
+
+        <md-card-content layout="column">
+
+            <md-input-container class="large">
+                <md-datepicker ng-model="newtimereg.date" md-hide-icons="calendar" md-placeholder="Dag"></md-datepicker>
+            </md-input-container>
+            <md-input-container class="large">
+                <label>Tidsforbrug</label>
+                <md-select ng-model="newtimereg.time">
+                    <md-option ng-repeat="time in timelist" ng-value="time.minutes">
+                        {{time.title}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container class="large">
+                <label>Description</label>
+                <textarea ng-model="newtimereg.description"></textarea>
+            </md-input-container>
+        </md-card-content>
+        <md-card-actions layout="column" layout-align="start">
+            <md-button class="md-raised" ng-click="addTimereg()">
+                <md-icon md-font-icon="material-icons">add</md-icon>
+                Tilføj
+            </md-button>
+        </md-card-actions>
+
+    </md-card>
+
+</md-content>

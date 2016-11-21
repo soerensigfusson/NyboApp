@@ -1,0 +1,37 @@
+<md-toolbar class="md-hue-3">
+    <div class="md-toolbar-tools">
+        <h2>
+            <span ui-sref="^.list" md-ink>Ordrerliste</span>
+        </h2>
+    </div>
+</md-toolbar>
+
+<md-content layout-padding>
+<md-list flex>
+    <md-list-item class="secondary-button-padding" ng-click="openOrder(order)" ng-repeat="order in orders">
+        <p>{{ order.name }}</p>
+        <md-menu>
+            <md-button class="md-icon-button" class="md-secondary">
+                <md-icon md-font-icon="material-icons">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button>
+                        Check voicemail
+                    </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                    <md-button ng-click="delete(user)">
+                        <md-icon md-font-icon="material-icons" md-menu-align-target>delete_forever</md-icon>
+                        Slet
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+
+    </md-list-item>
+</md-list>
+
+<md-button class="md-primary" ng-click="addOrder()">Add new order</md-button>
+</md-content>

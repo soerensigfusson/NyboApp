@@ -1,0 +1,54 @@
+<md-content layout-padding>
+    <md-list>
+        <md-list-item layout="row" layout-padding ng-repeat="material in order.materials">
+            <div flex>
+                {{material.name}}
+            </div>
+            <div>
+                {{material.amount}}
+            </div>
+            <div>
+                <md-button ng-click="deleteMaterial($index)">
+                    <md-icon md-font-icon="material-icons">remove</md-icon>
+                </md-button>
+            </div>
+        </md-list-item>
+    </md-list>
+
+    <md-card>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Tilføj materiale</span>
+          </md-card-title-text>
+        </md-card-title>
+
+        <md-card-content layout="column">
+            <md-autocomplete
+                flex
+                md-input-name="materialName"
+                md-selected-item="newmaterial.name"
+                md-search-text="newmaterial.materialSearchText"
+                md-delay="100"
+                md-items="item in materialSearch(newmaterial.materialSearchText)"
+                md-select-on-match="true"
+                md-match-case-insensitive="true"
+                md-floating-label="Materiale">
+                <md-item-template>
+                    <span md-highlight-text="newmaterial.materialSearchText">{{item}}</span>
+                </md-item-template>
+            </md-autocomplete>
+            <md-input-container>
+                <label>Amount</label>
+                <input type="number" step="any" ng-model="newmaterial.amount">
+            </md-input-container>
+    </md-card-content>
+    <md-card-actions layout="column" layout-align="start">
+        <md-button class="md-raised" ng-click="addMaterial()">
+            <md-icon md-font-icon="material-icons">add</md-icon>
+            Tilføj
+        </md-button>
+    </md-card-actions>
+
+    </md-card>
+
+</md-content>

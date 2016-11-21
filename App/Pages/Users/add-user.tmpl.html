@@ -1,0 +1,35 @@
+<form name="newuser" layout-padded layout="column">
+  <md-input-container>
+      <label>Name</label>
+      <input name="name" ng-model="user.name" required>
+      <div ng-messages="newuser.name.$error">
+        <div ng-message="required">Please enter a value for this field.</div>
+      </div>
+
+
+  </md-input-container>
+
+  <md-input-container>
+      <label>Email</label>
+      <input name="email" ng-model="user.email">
+      <div ng-messages="newuser.email.$error">
+        <div ng-message="required">Please enter a value for this field.</div>
+        <div ng-message="email">This field must be a valid email address.</div>
+      </div>
+  </md-input-container>
+
+  <md-input-container>
+      <label>Password</label>
+      <input name="password" type="password" minlength="6" ng-model="user.password" required>
+      <div ng-messages="newuser.password.$error">
+        <div ng-message="required">This is required!</div>
+        <div ng-message="minlength">That's too short!</div>
+      </div>
+
+  </md-input-container>
+
+</form>
+
+<div class="">
+    <md-button class="md-primary" ng-click="createUser()">Save</md-button>
+</div>
