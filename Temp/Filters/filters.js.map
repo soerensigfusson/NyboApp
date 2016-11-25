@@ -1,1 +1,0 @@
-{"version":3,"sources":["filters.js"],"names":["angular","module"],"mappings":";;AAAA,CAAC,YAAW;AACRA,YAAQC,MAAR,CAAe,aAAf,EAA8B,CAC1B,qBAD0B,EAE1B,oBAF0B,CAA9B;AAIH,CALD","file":"filters.js","sourcesContent":["(function() {\n    angular.module('App.Filters', [\n        'App.Filters.Minutes',\n        'App.Filters.ToDate'\n    ]);\n})();\n"]}

@@ -10,7 +10,7 @@
         timelist.push({title: hour + ':' + minutes, minutes: i * 30});
     }
 
-    function /*@ngInject*/ orderController($q, $scope, $state, $http, $stateParams, Orders, Auth, Users) {
+    function /*@ngInject*/ orderController($q, $scope, $state, $http, $stateParams, Orders, Auth, Users, TempFileStorage) {
         $scope.orders = Orders;
         $scope.timelist = timelist;
         $scope.addrSearch = {};
@@ -100,6 +100,15 @@
                 $scope.order.enddate = $scope.order.enddate.toString();
             }
 
+            if ($scope.order.files) {
+                for (let id in $scope.order.files) {
+                    let imageObj = $scope.order.files[id];
+                    if (imageObj.status === 'pending') {
+                        var ref = TempFileStorage.startUpload(id, $scope.order.$id);
+                    }
+                }
+            }
+
             if ($scope.order.$id === undefined) {
                 Orders.$add($scope.order);
                 $state.go('^.list');
@@ -186,18 +195,21 @@
             return user ? user.name : '----';
         }
 
-        $scope.onFileUploaded = function(snapshot, thumbnaildata){
+        $scope.onFileUploaded = function(thumbnaildata, file){
             if (!$scope.order.files) {
-                $scope.order.files = [];
+                $scope.order.files = {};
             }
 
-            $scope.order.files.push({
-                url: snapshot.downloadUrl,
-                thumbnail: thumbnaildata
-            })
+            let id = TempFileStorage.addFile(file);
 
-          console.log(snapshot, thumbnaildata);
+            $scope.order.files[id] = {
+                status: 'pending',
+                progress: 0,
+                name: file.name,
+                thumbnail: thumbnaildata
+            };
         }
+
 
     }
 

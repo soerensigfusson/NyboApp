@@ -4,11 +4,6 @@
         .directive('uploader', uploaderDirective);
 
     function /*@ngInject*/ uploaderDirective($timeout) {
-        var storage = firebase.storage();
-
-        // Create a storage reference from our storage service
-        var storageRef = storage.ref();
-        var imagesRef = storageRef.child('images');
 
         var directive = {
             restrict: 'A',
@@ -27,24 +22,14 @@
             var fileList = event.target.files; /* now you can work with the file list */
             for (var i = 0; i < fileList.length; i++) {
                 var file = fileList[i];
-                let thumbnaildata = '';
-
                 new Thumbnail({
                     maxWidth: 200,
                     maxHeight: 200,
                     file: file,
                     onSuccess: function(data) {
-                        thumbnaildata = data;
+                        callback()(data, file);
                     }
                 }).createThumbnail();
-
-
-                let ref = imagesRef.child(file.name);
-                ref.put(file).then(function(snapshot) {
-                    callback()(snapshot, thumbnaildata, file.name, ref);
-                });
-
-
             }
         }
 

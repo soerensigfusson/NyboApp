@@ -1,0 +1,8 @@
+<div class="imageLoader">
+    <a ng-href="{{file.downloadURL}}">
+        <img ng-src="{{file.thumbnail}}" alt=""/>
+    </a>
+    <div class="curtain" ng-style="{top: file.progress+'%'}" ng-if="file.status !== 'ready'"></div>
+
+    <md-progress-circular md-mode="indeterminate" ng-if="file.status !== 'ready'"></md-progress-circular>
+</div>
