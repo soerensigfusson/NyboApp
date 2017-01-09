@@ -22,9 +22,13 @@
 
     }
 
-    function /*@ngInject*/ config($mdThemingProvider) {
+    function /*@ngInject*/ config($mdThemingProvider, $mdDateLocaleProvider) {
       $mdThemingProvider.theme('default')
         .primaryPalette('blue-grey');
+
+      $mdDateLocaleProvider.formatDate = function(date) {
+         return moment(date).format('DD/MM/YYYY');
+      };
 
     }
 

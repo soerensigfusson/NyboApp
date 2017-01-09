@@ -4,14 +4,15 @@
             <span ui-sref="^.list" md-ink>Ordrerliste</span>
             <md-icon md-font-icon="material-icons">chevron_right</md-icon>
             <span>{{order.name}}</span>
+            <md-icon md-font-icon="material-icons">chevron_right</md-icon>
+            <span>{{extra.name}}</span>
         </h2>
 
     </div>
-    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+    <md-nav-bar md-selected-nav-item="extraNavItem" nav-bar-aria-label="navigation links">
         <md-nav-item md-nav-sref=".details" name="details">Details</md-nav-item>
         <md-nav-item md-nav-sref=".materials" name="materials">Materials</md-nav-item>
         <md-nav-item md-nav-sref=".time" name="time">Time</md-nav-item>
-        <md-nav-item md-nav-sref=".extralist" name="extra">Ekstra</md-nav-item>
     </md-nav-bar>
 
 </md-toolbar>

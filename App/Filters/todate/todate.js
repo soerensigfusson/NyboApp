@@ -6,7 +6,6 @@
     function /*@ngInject*/ minutes() {
 
         return function(val) {
-
             if (!val) {
                 return '';
             }

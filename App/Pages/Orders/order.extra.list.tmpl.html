@@ -1,0 +1,24 @@
+
+<md-content layout-padding>
+<md-list flex>
+    <md-list-item class="secondary-button-padding" ng-click="openExtraTask(task)" ng-repeat="task in order.extratasks">
+        <p>{{ task.description }}</p>
+        <md-menu>
+            <md-button class="md-icon-button" class="md-secondary">
+                <md-icon md-font-icon="material-icons">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button ng-click="deleteExtraTask(task)">
+                        <md-icon md-font-icon="material-icons" md-menu-align-target>delete_forever</md-icon>
+                        Slet
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+
+    </md-list-item>
+</md-list>
+
+<md-button class="md-primary" ng-click="addExtraTask()">Tilføj ekstra opgave</md-button>
+</md-content>

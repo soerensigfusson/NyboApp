@@ -1,6 +1,6 @@
   <md-toolbar>
     <div class="md-toolbar-tools">
-     <md-button class="md-icon-button" aria-label="Settings" hide-gt-md ng-click="toggleNavigation()">
+     <md-button class="md-icon-button" aria-label="Settings" hide-gt-sm ng-click="toggleNavigation()">
        <md-icon md-font-icon="material-icons">menu</md-icon>
      </md-button>
 
@@ -16,16 +16,12 @@
   <md-sidenav
           class="md-sidenav-left"
           md-component-id="left"
-          md-is-locked-open="$mdMedia('gt-md')"
+          md-is-locked-open="$mdMedia('gt-sm')"
           md-whiteframe="4">
-
 
           <md-list>
             <md-list-item ui-sref="home.orders.list">
               Orders
-            </md-list-item>
-            <md-list-item ui-sref="home.account">
-              Account
             </md-list-item>
             <md-list-item ui-sref="home.users.list">
               Users

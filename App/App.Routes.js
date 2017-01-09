@@ -40,11 +40,6 @@
                     }
                 }
             })
-            .state('home.account', {
-                url: '/account',
-                controller: 'AccountController',
-                templateUrl: 'Pages/Account/account.tmpl.html'
-            })
             .state('home.users', {
                 url: '/users',
                 abstract: true,
@@ -98,15 +93,38 @@
                 }
             })
             .state('home.orders.order.details', {
+                url: '/details',
                 templateUrl: 'Pages/Orders/order.details.tmpl.html',
             })
             .state('home.orders.order.materials', {
-                templateUrl: 'Pages/Orders/order.materials.tmpl.html',
+                url: '/materials',
+                controller: 'OrderMaterialsController',
+                templateUrl: 'Pages/Orders/Materials/order.materials.tmpl.html',
             })
             .state('home.orders.order.time', {
-                templateUrl: 'Pages/Orders/order.time.tmpl.html',
-            });
+                url: '/time',
+                controller: 'OrderTimeregController',
+                templateUrl: 'Pages/Orders/Timereg/order.time.tmpl.html',
+            })
+            .state('home.orders.order.extralist', {
+                url: '/extra',
+                templateUrl: 'Pages/Orders/order.extra.list.tmpl.html',
+            })
+            .state('home.orders.order.addextra', {
+                templateUrl: 'Pages/Orders/add-extra.tmpl.html',
+            })
+            .state('home.orders.order.extra', {
+                views: {
+                  '@home.orders': {
+                      templateUrl: 'Pages/Orders/order.extra.tmpl.html',
+                  }
+                }
 
+            })
+            .state('home.orders.order.extra.details', {
+                url: '/details',
+                templateUrl: 'Pages/Orders/order.extra.details.tmpl.html',
+            });
     }
 
 })();

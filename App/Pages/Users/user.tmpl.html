@@ -1,0 +1,19 @@
+<md-content layout-padding>
+
+    <md-list>
+        <md-list-item layout="row" layout-padding ng-repeat="timereg in timeregistrations | filter:{user:userid}">
+            <div>
+                {{timereg.date | todate | date : 'dd/MM/yyyy'}}
+            </div>
+            <div>
+                {{timereg.time | minutes}}
+            </div>
+            <div flex>
+                {{timereg.description}}
+            </div>
+        </md-list-item>
+
+    </md-list>
+
+
+</md-content>
