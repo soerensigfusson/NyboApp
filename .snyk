@@ -1,0 +1,78 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.3
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - grunt-express > connect > debug:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > body-parser > debug:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > connect-timeout > debug:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > express-session > debug:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > finalhandler > debug:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > morgan > debug:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > serve-index > debug:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > serve-static > send > debug:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > compression > debug:
+        patched: '2019-04-01T03:42:45.006Z'
+  'npm:mime:20170907':
+    - grunt-express > connect > serve-static > send > mime:
+        patched: '2019-04-01T03:42:45.006Z'
+  'npm:minimatch:20160620':
+    - grunt-csscomb > csscomb > csscomb-core > minimatch:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > grunt-parallel > grunt > minimatch:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > grunt-parallel > grunt > glob > minimatch:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > grunt-contrib-watch > gaze > globule > minimatch:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-csscomb > csscomb > csscomb-core > vow-fs > glob > minimatch:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > grunt-contrib-watch > gaze > globule > glob > minimatch:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > grunt-parallel > grunt > findup-sync > glob > minimatch:
+        patched: '2019-04-01T03:42:45.006Z'
+  'npm:ms:20170412':
+    - grunt-express > connect > connect-timeout > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > debug > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > morgan > debug > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > express-session > debug > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > finalhandler > debug > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > compression > debug > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > serve-index > debug > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > body-parser > debug > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > connect-timeout > debug > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > serve-static > send > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > serve-static > send > debug > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > serve-favicon > ms:
+        patched: '2019-04-01T03:42:45.006Z'
+  'npm:negotiator:20160616':
+    - grunt-express > connect > compression > accepts > negotiator:
+        patched: '2019-04-01T03:42:45.006Z'
+    - grunt-express > connect > serve-index > accepts > negotiator:
+        patched: '2019-04-01T03:42:45.006Z'
+  'npm:qs:20140806-1':
+    - grunt-express > grunt-contrib-watch > tiny-lr-fork > qs:
+        patched: '2019-04-01T03:42:45.006Z'
+  'npm:uglify-js:20151024':
+    - grunt-html2js > jade > transformers > uglify-js:
+        patched: '2019-04-01T03:42:45.006Z'
