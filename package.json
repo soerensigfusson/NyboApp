@@ -17,7 +17,7 @@
     "dependencies": {
         "autoprefixer": "^6.0.3",
         "connect-inject": "^0.4.0",
-        "dateformat": "^1.0.11",
+        "dateformat": "^2.0.0",
         "express": "^4.11.2",
         "express-session": "^1.13.0",
         "grunt": "^1.0.1",
@@ -25,7 +25,7 @@
         "grunt-contrib-clean": "^1.0.0",
         "grunt-contrib-concat": "^1.0.0",
         "grunt-contrib-copy": "^1.0.0",
-        "grunt-contrib-uglify": "^2.0.0",
+        "grunt-contrib-uglify": "^3.4.0",
         "grunt-contrib-watch": "^1.0.0",
         "grunt-csscomb": "^3.1.0",
         "grunt-express": "^1.4.1",
