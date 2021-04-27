@@ -15,7 +15,7 @@
         ]
     },
     "dependencies": {
-        "autoprefixer": "^6.0.3",
+        "autoprefixer": "^10.0.0",
         "connect-inject": "^0.4.0",
         "dateformat": "^1.0.11",
         "express": "^4.11.2",
